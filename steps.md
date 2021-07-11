@@ -60,7 +60,8 @@ exit
 PATH=/.......
 ```
 15. Repeat the "Step 14" for the ```wipeFactoryRestore.sh``` file which is in the same directory.
-
+16. Edit ```/var/www/Admin/webapp/classes/api/1.0/rest/system_configuration/system_factory_restore.php``` with an editor. File path may vary but filename is same.
+17. Find the method with signature ```function post($urlPath,....) {```. Inside this method, you'll see some lines that are commented (//). Uncomment them. (Sorry i can't share much detail about it since it's a proprietary software.
 ---
 
 
