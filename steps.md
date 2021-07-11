@@ -8,5 +8,10 @@
   - If you can't really establish connection; try to "use link-local only" as your wired connection IPv4 method from settings. Find it per your OS
   
 - Disable these from the UI:
+  - Remote access
+  - FTP
+  - Twonky
+
+- Make sure you didn't receive no email regarding system restart or network link down from your NAS. Because you mighta setup a bridge on your PC's ethernet and therefore could've shared internet to the NAS.
 
 *To be continued*
