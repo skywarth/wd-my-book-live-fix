@@ -62,8 +62,29 @@ PATH=/.......
 15. Repeat the "Step 14" for the ```wipeFactoryRestore.sh``` file which is in the same directory.
 16. Edit ```/var/www/Admin/webapp/classes/api/1.0/rest/system_configuration/system_factory_restore.php``` with an editor. File path may vary but filename is same.
 17. Find the method with signature ```function post($urlPath,....) {```. Inside this method, you'll see some lines that are commented (//). Uncomment them. (Sorry i can't share much detail about it since it's a proprietary software.
+
+
+## Disabling any remote connection
+18. Run this command ```sudo route del default gw <your-router-ip>```. For example if your gateway/router is 192.168.1.1 then ```sudo route del default gw 192.168.1.1```. In essence, this removes the default gateway route to your router so unknown or foreign connections will never be established. Even though UFW is far easier and better, it is not available in WD My Book Live. Since you can't (and shouldn't) expose it to internet, you can't install UFW.
+19. If anything goes wrong on step 18, head over to my question on here :[Question](https://unix.stackexchange.com/questions/656892/disallow-any-internet-connection/656897#656897). It has a useful answer which you can use as alternative.
+
+
+
+## Finalizing
+20. Some changes to DHCP on UI panel. Can't recall it now, gotta check it later.
+21. Hook the NAS to the router.
+
+## Testing
+22. If you receive any email or notification of some sort, DISCONNECT IT FROM THE ROUTER IMMEDIATELY.
+23. After running the command on step 18 or 19, try to ping an external host. E.g: run ```ping google.com```. It should fail.
+24. Open up your UI panel, check internet connection status. It should say "no internet connection".
+25. Connect to your NAS how you would normally do. FTP, AFP, SMB ... See everything is in order and you can Read/Write.
+
+
+
+
 ---
 
 
 
-*To be continued*
+*To be continued*, just update step 20
