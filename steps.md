@@ -71,8 +71,18 @@ PATH=/.......
 
 
 ## Finalizing
-20. Some changes to DHCP on UI panel. Can't recall it now, gotta check it later.
-21. Hook the NAS to the router.
+19. Go to: http://(your-nas-ip)/UI/ssh and disable SSH.
+20. From the settings on UI, open 'Remote Access' tab. Do these:
+    - Uncheck 'Remote Access' checkbox.
+    - Connection options: Manual
+    - WD 2go Port 1: 65535 (or any other port that is blocked by your router)
+    - WD 2go Port 2: 65354 (or any other port that is blocked by your router)
+22. Navigate to the UI panel. Enter the network tab from settings. Set network mode to 'static'. Now this part is tricky and you should be super careful. One mistake and you might not be able to connect to the device again unless you reset it. If you are not confident with your network knowledge, Skip this step. After this step, IP address of NAS will change and you won't be able to access it by connecting it to PC. So be careful.
+    - **Network mode:** static
+    - **IP Address:** set this to some ip in your modem/router's outer range. E.g your router acts as a DHCP server for 192.168.1.0 to 192.168.1.240 with 192.168.1.0/24. In this case you can set your NAS's IP to anything ranging from 192.168.1.241 to 192.168.1.254. 
+    - **Netmask:** According to your router's netmask/subnet mask. E.g 255.255.255.0
+    - **DNS server:** Your router's IP. E.g 192.168.1.1
+23. Hook the NAS to the router.
 
 ## Testing
 22. If you receive any email or notification of some sort, DISCONNECT IT FROM THE ROUTER IMMEDIATELY.
@@ -84,7 +94,4 @@ PATH=/.......
 
 
 ---
-
-
-
-*To be continued*, just update step 20
+These are all the things i did to secure my device as far as i remember. Hope it helps you. I learned some steps from some user at WD forum (thanks).
